@@ -26,7 +26,9 @@ public class MainClass {
 			if(file.exists()) {
 				List<String> filesList = Arrays.asList(file.list());
 				
-				List<String> filesNames = SeparateNames.separeNames(filesList);
+				
+				
+				List<String> filesNames = SeparateNames.separeNames(filesList, "-", ".", ")");
 				
 				List<String> singleNames = FindSimilarNames.findSimilar(filesNames);
 				
