@@ -11,11 +11,11 @@ import services.SeparateNames;
 
 public class MainClass {
 	public static void main(String[] args) {
-		System.out.println("===========================================================");
-		System.out.println("*                                                         *");
-		System.out.println("*             List files with similar names               *");
-		System.out.println("*                                                         *");
-		System.out.println("===========================================================");
+		System.out.println("=======================================================================");
+		System.out.println("*                                                                     *");
+		System.out.println("*                    List files with similar names                    *");
+		System.out.println("*                                                                     *");
+		System.out.println("=======================================================================");
 		
 		try(Scanner sc = new Scanner(System.in)){
 			System.out.print("Enter with directory path: ");
@@ -25,8 +25,6 @@ public class MainClass {
 			
 			if(file.exists()) {
 				List<String> filesList = Arrays.asList(file.list());
-				
-				
 				
 				List<String> filesNames = SeparateNames.separeNames(filesList, "-", ".", ")");
 				

@@ -12,6 +12,7 @@ public class FindSimilarNames {
 		Set<String> filesSet = new HashSet<>();
 		
 		// attribute the list of names to a set
+		// a set collection do not takes repeated elements
 		for(String name:filesNames)
 			filesSet.add(name.toLowerCase());
 		

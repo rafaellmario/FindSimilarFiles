@@ -8,9 +8,9 @@ public class SeparateNames {
 	public static List<String> separeNames(Collection<String> filesList, String musicSplit, String formatSplit, String specialSplit){
 		List<String> filesNames = new ArrayList<>();
 		
-		String firstStep  = null;
-		String secondStep = null;
-		String thirdStep  = null;
+		String firstStep  = null; // first step in the name split
+		String secondStep = null; // second step in the name split
+		String thirdStep  = null; // third step in the name split
 		
 		for(String iten:filesList) {
 			int index = iten.indexOf(musicSplit);
@@ -25,7 +25,9 @@ public class SeparateNames {
 			else
 				secondStep = firstStep.toString();
 			
-			index = secondStep.indexOf(specialSplit);
+			index = (secondStep.indexOf(specialSplit) > secondStep.indexOf(musicSplit)) ? 
+					secondStep.indexOf(musicSplit) : secondStep.indexOf(specialSplit);
+			
 			if(index > -1 && index <= secondStep.length())
 				thirdStep = secondStep.substring(0,index).trim();
 			else
@@ -33,7 +35,6 @@ public class SeparateNames {
 			
 			filesNames.add(thirdStep.strip());
 		}
-		
 		return filesNames;
 	}
 }
